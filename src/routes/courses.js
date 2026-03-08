@@ -1,8 +1,8 @@
 import express from "express";
-import { supabase } from "../supabaseClient";
-import { validateEnrollment } from "../middleware/validateEnrollment";
+import { supabase } from "../supabaseClient.js";
+import { validateEnrollment } from "../middleware/validateEnrollment.js";
 
-const router = express.Router();
+export const router = express.Router();
 
 router.get("/courses", async (req, res) => {
   const { data, error } = await supabase.from("courses").select("*");
@@ -37,3 +37,5 @@ router.get("/courses/:id/enrollments", async (req, res) => {
 
   res.json(data);
 });
+
+export default router;

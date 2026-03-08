@@ -7,5 +7,4 @@ app.use(express.json());
 app.use(logger);
 
 app.use("/", courseRoutes);
-
 export default app;
